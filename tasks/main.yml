@@ -29,7 +29,7 @@
     - Reload systemd
 
 - name: Install multissh host key for {{ instance }}
-  ansible.builtin.file:
+  ansible.builtin.copy:
     content: '{{ hostkey }}'
     dest: '{{ keyfile }}'
     mode: "0640"
