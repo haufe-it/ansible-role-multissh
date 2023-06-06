@@ -1,13 +1,13 @@
 # {{ ansible_managed }}
 
-{% for address in multissh.listenaddresses %}
+{% for address in listenaddresses %}
 ListenAddress {{address}}
 {% endfor %}
 
 HostKey {{ keyfile }}
 
-{% if multissh.allowusers is defined %}
-AllowUsers {% for user in multissh.allowusers %} {{ user }}{% endfor %}
+{% if allowusers is defined %}
+AllowUsers {% for user in allowusers %} {{ user }}{% endfor %}
 {% endif %}
 
 PrintMotd no
