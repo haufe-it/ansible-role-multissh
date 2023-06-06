@@ -1,0 +1,24 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=SSH for %I
+After=network.target auditd.service
+ConditionPathExists=!/etc/ssh/sshd_not_to_be_run
+ConditionPathExists=/etc/ssh/multissh/%I_sshd_config
+
+[Service]
+ExecStartPre=/usr/sbin/sshd -t -f /etc/ssh/multissh/%I_sshd_config
+ExecStart=/usr/sbin/sshd -D $SSHD_OPTS -f /etc/ssh/multissh/%I_sshd_config
+ExecReload=/usr/sbin/sshd -t -f /etc/ssh/multissh/%I_sshd_config
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=notify
+RuntimeDirectory=sshd_%I
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target
+Alias=sshd.service
+

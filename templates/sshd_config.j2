@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+
+{% for address in multissh.listaddresses %}
+ListenAddress {{address}}
+{% endfor %}
+
+HostKey {{ keyfile }}
+
+{% if multissh.allowusers is defined %}
+AllowUsers {% for user in multissh.allowusers %} {{ user }}{% endfor %}
+{% endif %}
+
+PrintMotd no

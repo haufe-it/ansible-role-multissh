@@ -1,0 +1,22 @@
+galaxy_info:
+  role_name: multissh
+  namespace: haufe_it
+  author: Jakob Haufe
+  description: Configure multiple instances of SSH with on separate addresses and using separate keys
+  company: haufe.it
+  license: GPL-3.0-only
+
+  min_ansible_version: 2.14
+
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+        - sid
+
+  galaxy_tags:
+    - ssh
+    - systemd
+
+dependencies: []
