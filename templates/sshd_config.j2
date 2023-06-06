@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 
-{% for address in multissh.listaddresses %}
+{% for address in multissh.listenaddresses %}
 ListenAddress {{address}}
 {% endfor %}
 
