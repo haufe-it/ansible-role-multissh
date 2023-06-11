@@ -19,8 +19,8 @@
     group: root
 
 - name: Install multissh service file
-  ansible.builtin.copy:
-    src: multissh@.service
+  ansible.builtin.template:
+    src: multissh@.service.j2
     dest: /etc/systemd/system/multissh@.service
     mode: "0644"
     owner: root
