@@ -14,6 +14,7 @@ ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
 RestartPreventExitStatus=255
+RestartSec=10
 Type=notify
 RuntimeDirectory=sshd_%I
 RuntimeDirectoryMode=0755
