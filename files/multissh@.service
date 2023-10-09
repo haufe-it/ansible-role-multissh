@@ -11,6 +11,7 @@ ExecStartPre=/usr/sbin/sshd -t -f /etc/ssh/multissh/%I_sshd_config
 ExecStart=/usr/sbin/sshd -D $SSHD_OPTS -f /etc/ssh/multissh/%I_sshd_config
 ExecReload=/usr/sbin/sshd -t -f /etc/ssh/multissh/%I_sshd_config
 ExecReload=/bin/kill -HUP $MAINPID
+IPAccounting=true
 KillMode=process
 Restart=on-failure
 RestartPreventExitStatus=255
