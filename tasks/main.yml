@@ -1,5 +1,5 @@
 ---
-- name: Generate multissh configration file path
+- name: Generate multissh configuration file path
   ansible.builtin.set_fact:
     configfile: '/etc/ssh/multissh/{{ instance }}_sshd_config'
     keyfile: '/etc/ssh/multissh/{{ instance }}_hostkey'
