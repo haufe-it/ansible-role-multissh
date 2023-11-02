@@ -22,18 +22,20 @@ Role Variables
 Example Playbook
 ----------------
 
-    - hosts: myserver
-      roles:
-        - role: haufe_it.multissh
-          instance: instance1.example.org
-          listenaddresses:
-            - 2001:db8::1
-          hostkey: "{{ vault.instance1_hostkey }}"
-        - role: haufe_it.multissh
-          instance: instance2.example.org
-          listenaddresses:
-            - 2001:db8::2
-          hostkey: "{{ vault.instance2_hostkey }}"
+```yaml
+- hosts: myserver
+  roles:
+    - role: haufe_it.multissh
+      instance: instance1.example.org
+      listenaddresses:
+        - 2001:db8::1
+      hostkey: "{{ vault.instance1_hostkey }}"
+    - role: haufe_it.multissh
+      instance: instance2.example.org
+      listenaddresses:
+        - 2001:db8::2
+      hostkey: "{{ vault.instance2_hostkey }}"
+```
 
 License
 -------
