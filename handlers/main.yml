@@ -7,4 +7,9 @@
   ansible.builtin.systemd:
     name: 'multissh@{{ instance }}.service'
     state: reloaded
+
+- name: Restart multissh instance
+  ansible.builtin.systemd:
+    name: 'multissh@{{ instance }}.service'
+    state: restarted
 ...

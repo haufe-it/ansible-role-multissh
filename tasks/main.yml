@@ -46,7 +46,7 @@
     owner: root
     group: root
   notify:
-    - Reload multissh instance
+    - Restart multissh instance
 
 - name: Enable multissh instance {{ instance }}
   ansible.builtin.systemd:
