@@ -1,2 +1,9 @@
+---
+# vim: ft=yaml
+profile: production
+exclude_paths:
+  - .github/
+strict: true
 skip_list:
   - package-latest
+...
