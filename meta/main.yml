@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: multissh
-  namespace: haufe_it
+  namespace: haufe-it
   author: Jakob Haufe
   description: |
     Configure multiple instances of SSH with on separate addresses and using
