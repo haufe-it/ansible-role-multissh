@@ -10,5 +10,6 @@ HostKey {{ keyfile }}
 AllowUsers {% for user in allowusers %} {{ user }}{% endfor %}
 {% endif %}
 
-KbdInteractiveAuthentication no
+KbdInteractiveAuthentication {{ kbdinteractiveauthentication | default("no") }}
+PasswordAuthentication {{ passwordauthentication | default("no") }}
 PrintMotd no
