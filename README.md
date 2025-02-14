@@ -1,10 +1,6 @@
 multissh
 ========
 
-**WARNING**
-
-**INCOMPLETE** - **WORK IN PROGRESS**
-
 Configure multiple instances of SSHd to listen on separate IPs and/or ports using a separate host key.
 
 Requirements
@@ -15,9 +11,13 @@ Requirements
 Role Variables
 --------------
 
-- instance: (arbitrary) name of the SSH instance
-- listenaddresses: List of IP addresses this instance should listen on
-- hostkey: SSH private key for the instance
+| Name                         | Description                                         |
+|-                             |-                                                    |
+| instance                     | (arbitrary) name of the SSH instance                |
+| kbdinteractiveauthentication | sshd\_config KbdInteractiveAuthentication           |
+| passwordauthentication       | sshd\_config PasswordAuthentication                 |
+| listenaddresses              | List of IP addresses this instance should listen on |
+| hostkey                      | SSH private key for the instance                    |
 
 Example Playbook
 ----------------
